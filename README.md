@@ -77,4 +77,3 @@ El orden esperado de los parámetros es:
 8. **Transiciones ($\delta$):** A partir de aquí, cada línea representa una transición. Debe incluir los siguientes elementos separados por espacios, adaptados al número de cintas:
    * `[Estado_Origen] [Simbolos_Leidos] [Estado_Destino] [Simbolos_Escritos] [Movimientos_Cabezales]`
    
-*Nota: Para los símbolos leídos, escritos y movimientos (`L`, `R`, `S`), se deben proporcionar tantos caracteres unidos como número de cintas tenga la máquina.*
