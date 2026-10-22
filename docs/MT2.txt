@@ -1,0 +1,275 @@
+# MT 2 Cintas (Solo L y R): Sustituir palabra por nº de 'b' . nº de 'a'
+q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q20
+a b
+a b 0 1 . $ X Y S
+q0
+.
+q20
+2
+# Fase 0: Inicializar tope $ para rebotar
+q0 a . q0 a . L L
+q0 b . q0 b . L L
+q0 . . q1 $ $ R R
+
+# Fase 1: Buscar 'b'
+q1 a . q1 a . R R
+q1 a 1 q1 a 1 R R
+q1 X . q1 X . R R
+q1 X 1 q1 X 1 R R
+q1 Y . q1 Y . R R
+q1 Y 1 q1 Y 1 R R
+q1 b . q2 X . L L
+q1 b 1 q2 X 1 L L
+q1 . . q5 . . L L
+q1 . 1 q5 . 1 L L
+
+# Fase 2: Rebobinar al encontrar 'b'
+q2 a 1 q2 a 1 L L
+q2 a . q2 a . L L
+q2 X 1 q2 X 1 L L
+q2 X . q2 X . L L
+q2 Y 1 q2 Y 1 L L
+q2 Y . q2 Y . L L
+q2 b 1 q2 b 1 L L
+q2 b . q2 b . L L
+q2 . 1 q2 . 1 L L
+q2 . . q2 . . L L
+q2 $ $ q3 $ $ R R
+
+# Fase 3: Escribir '1' al final de la Cinta 2
+q3 a 1 q3 a 1 R R
+q3 X 1 q3 X 1 R R
+q3 Y 1 q3 Y 1 R R
+q3 b 1 q3 b 1 R R
+q3 . 1 q3 . 1 R R
+q3 a . q4 a 1 L L
+q3 X . q4 X 1 L L
+q3 Y . q4 Y 1 L L
+q3 b . q4 b 1 L L
+q3 . . q4 . 1 L L
+
+q4 a 1 q4 a 1 L L
+q4 X 1 q4 X 1 L L
+q4 Y 1 q4 Y 1 L L
+q4 b 1 q4 b 1 L L
+q4 . 1 q4 . 1 L L
+q4 a . q4 a . L L
+q4 X . q4 X . L L
+q4 Y . q4 Y . L L
+q4 b . q4 b . L L
+q4 . . q4 . . L L
+q4 $ $ q1 $ $ R R
+
+# Fase 4: Escribir el Separador 'S' (Corregido para palabras cortas)
+q5 a 1 q5 a 1 L L
+q5 X 1 q5 X 1 L L
+q5 Y 1 q5 Y 1 L L
+q5 . 1 q5 . 1 L L
+q5 a . q5 a . L L
+q5 X . q5 X . L L
+q5 Y . q5 Y . L L
+q5 . . q5 . . L L
+q5 $ $ q6 $ $ R R
+
+q6 a 1 q7 a 1 R R
+q6 X 1 q7 X 1 R R
+q6 Y 1 q7 Y 1 R R
+q6 . 1 q7 . 1 R R
+q6 a . q7 a 0 R R
+q6 X . q7 X 0 R R
+q6 Y . q7 Y 0 R R
+q6 . . q7 . 0 R R
+
+q7 a 1 q7 a 1 R R
+q7 X 1 q7 X 1 R R
+q7 Y 1 q7 Y 1 R R
+q7 . 1 q7 . 1 R R
+q7 a 0 q7 a 0 R R
+q7 X 0 q7 X 0 R R
+q7 Y 0 q7 Y 0 R R
+q7 . 0 q7 . 0 R R
+q7 a . q8 a S L L
+q7 X . q8 X S L L
+q7 Y . q8 Y S L L
+q7 . . q8 . S L L
+
+q8 a 1 q8 a 1 L L
+q8 X 1 q8 X 1 L L
+q8 Y 1 q8 Y 1 L L
+q8 . 1 q8 . 1 L L
+q8 a 0 q8 a 0 L L
+q8 X 0 q8 X 0 L L
+q8 Y 0 q8 Y 0 L L
+q8 . 0 q8 . 0 L L
+q8 a S q8 a S L L
+q8 X S q8 X S L L
+q8 Y S q8 Y S L L
+q8 . S q8 . S L L
+q8 a . q8 a . L L
+q8 X . q8 X . L L
+q8 Y . q8 Y . L L
+q8 . . q8 . . L L
+q8 $ $ q9 $ $ R R
+
+# Fase 5: Buscar 'a'
+q9 a . q10 Y . L L
+q9 a 1 q10 Y 1 L L
+q9 a 0 q10 Y 0 L L
+q9 a S q10 Y S L L
+q9 X . q9 X . R R
+q9 X 1 q9 X 1 R R
+q9 X 0 q9 X 0 R R
+q9 X S q9 X S R R
+q9 Y . q9 Y . R R
+q9 Y 1 q9 Y 1 R R
+q9 Y 0 q9 Y 0 R R
+q9 Y S q9 Y S R R
+q9 . . q13 . . L L
+q9 . 1 q13 . 1 L L
+q9 . 0 q13 . 0 L L
+q9 . S q13 . S L L
+
+q10 a 1 q10 a 1 L L
+q10 X 1 q10 X 1 L L
+q10 Y 1 q10 Y 1 L L
+q10 a 0 q10 a 0 L L
+q10 X 0 q10 X 0 L L
+q10 Y 0 q10 Y 0 L L
+q10 a S q10 a S L L
+q10 X S q10 X S L L
+q10 Y S q10 Y S L L
+q10 a . q10 a . L L
+q10 X . q10 X . L L
+q10 Y . q10 Y . L L
+q10 . . q10 . . L L
+q10 . 1 q10 . 1 L L
+q10 . 0 q10 . 0 L L
+q10 . S q10 . S L L
+q10 $ $ q11 $ $ R R
+
+q11 a 1 q11 a 1 R R
+q11 X 1 q11 X 1 R R
+q11 Y 1 q11 Y 1 R R
+q11 . 1 q11 . 1 R R
+q11 a 0 q11 a 0 R R
+q11 X 0 q11 X 0 R R
+q11 Y 0 q11 Y 0 R R
+q11 . 0 q11 . 0 R R
+q11 a S q11 a S R R
+q11 X S q11 X S R R
+q11 Y S q11 Y S R R
+q11 . S q11 . S R R
+q11 a . q12 a 1 L L
+q11 X . q12 X 1 L L
+q11 Y . q12 Y 1 L L
+q11 . . q12 . 1 L L
+
+q12 a 1 q12 a 1 L L
+q12 X 1 q12 X 1 L L
+q12 Y 1 q12 Y 1 L L
+q12 a 0 q12 a 0 L L
+q12 X 0 q12 X 0 L L
+q12 Y 0 q12 Y 0 L L
+q12 a S q12 a S L L
+q12 X S q12 X S L L
+q12 Y S q12 Y S L L
+q12 a . q12 a . L L
+q12 X . q12 X . L L
+q12 Y . q12 Y . L L
+q12 . . q12 . . L L
+q12 . 1 q12 . 1 L L
+q12 . 0 q12 . 0 L L
+q12 . S q12 . S L L
+q12 $ $ q9 $ $ R R
+
+q13 a 1 q13 a 1 L L
+q13 X 1 q13 X 1 L L
+q13 Y 1 q13 Y 1 L L
+q13 a 0 q13 a 0 L L
+q13 X 0 q13 X 0 L L
+q13 Y 0 q13 Y 0 L L
+q13 a S q13 a S L L
+q13 X S q13 X S L L
+q13 Y S q13 Y S L L
+q13 . 1 q13 . 1 L L
+q13 . 0 q13 . 0 L L
+q13 . S q13 . S L L
+q13 a . q13 a . L L
+q13 X . q13 X . L L
+q13 Y . q13 Y . L L
+q13 . . q13 . . L L
+q13 $ $ q14 $ $ R R
+
+# Fase 6: Verificar 0 'a's (Corregido para palabras cortas)
+q14 X 1 q14 X 1 R R
+q14 Y 1 q14 Y 1 R R
+q14 a 1 q14 a 1 R R
+q14 . 1 q14 . 1 R R
+q14 X 0 q14 X 0 R R
+q14 Y 0 q14 Y 0 R R
+q14 a 0 q14 a 0 R R
+q14 . 0 q14 . 0 R R
+q14 X S q15 X S R R
+q14 Y S q15 Y S R R
+q14 a S q15 a S R R
+q14 . S q15 . S R R
+
+q15 X 1 q16 X 1 L L
+q15 Y 1 q16 Y 1 L L
+q15 a 1 q16 a 1 L L
+q15 . 1 q16 . 1 L L
+q15 X . q16 X 0 L L
+q15 Y . q16 Y 0 L L
+q15 a . q16 a 0 L L
+q15 . . q16 . 0 L L
+
+q16 X 1 q16 X 1 L L
+q16 Y 1 q16 Y 1 L L
+q16 a 1 q16 a 1 L L
+q16 . 1 q16 . 1 L L
+q16 X 0 q16 X 0 L L
+q16 Y 0 q16 Y 0 L L
+q16 a 0 q16 a 0 L L
+q16 . 0 q16 . 0 L L
+q16 X S q16 X S L L
+q16 Y S q16 Y S L L
+q16 a S q16 a S L L
+q16 . S q16 . S L L
+q16 $ $ q17 $ $ R R
+
+# Fase 7: Copiar C2 a C1 y borrar variables
+q17 a 1 q17 1 1 R R
+q17 X 1 q17 1 1 R R
+q17 Y 1 q17 1 1 R R
+q17 . 1 q17 1 1 R R
+q17 a 0 q17 0 0 R R
+q17 X 0 q17 0 0 R R
+q17 Y 0 q17 0 0 R R
+q17 . 0 q17 0 0 R R
+q17 a S q17 . S R R
+q17 X S q17 . S R R
+q17 Y S q17 . S R R
+q17 . S q17 . S R R
+q17 a . q18 . . R R
+q17 X . q18 . . R R
+q17 Y . q18 . . R R
+q17 . . q19 . . L L
+
+q18 a . q18 . . R R
+q18 X . q18 . . R R
+q18 Y . q18 . . R R
+q18 . . q19 . . L L
+
+q19 1 1 q19 1 1 L L
+q19 1 0 q19 1 0 L L
+q19 1 S q19 1 S L L
+q19 1 . q19 1 . L L
+q19 0 1 q19 0 1 L L
+q19 0 0 q19 0 0 L L
+q19 0 S q19 0 S L L
+q19 0 . q19 0 . L L
+q19 . 1 q19 . 1 L L
+q19 . 0 q19 . 0 L L
+q19 . S q19 . S L L
+q19 . . q19 . . L L
+q19 $ $ q20 . . R R
