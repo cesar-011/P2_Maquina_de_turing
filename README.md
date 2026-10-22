@@ -25,12 +25,12 @@ make
 El simulador se ejecuta por línea de comandos y requiere un fichero de configuración.
 
 ```bash
-./build/maquina_turing -config <ruta_al_fichero>
+./build/simulador_mt -config <ruta_al_fichero>
 ```
 
 **Ejemplo de ejecución con los problemas propuestos:**
 ```bash
-./build/maquina_turing -config docs/MT1.txt
+./build/simulador_mt -config docs/MT1.txt
 ```
 
 Una vez ejecutado, el programa cargará la máquina, validará sus componentes (conjuntos, alfabetos y transiciones) y mostrará su configuración por pantalla. Posteriormente, entrará en un **modo interactivo** pidiendo cadenas de entrada para simular:
